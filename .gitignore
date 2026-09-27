@@ -1,0 +1,30 @@
+# Secrets - NEVER commit real values
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*id_rsa*
+*id_ed25519*
+credentials.json
+secrets.json
+config/secrets/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Node / builds (for future web/ api/)
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Python / misc
+__pycache__/
+*.pyc
+.venv/

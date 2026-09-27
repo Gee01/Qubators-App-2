@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Qubators App 2 — Design Preview</title>
+<style>
+  :root {
+    --primary: #4F46E5;
+    --primary-dark: #3730A3;
+    --secondary: #0E7490;
+    --accent: #F59E0B;
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --text: #0F172A;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --success: #16A34A;
+    --error: #DC2626;
+    --radius: 12px;
+    --font: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); }
+  header { background: var(--text); color: #fff; padding: 28px 32px; }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p { margin: 0; color: #CBD5E1; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; display: grid; gap: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .card h2 { margin: 0 0 4px; font-size: 20px; }
+  .card > p.sub { margin: 0 0 16px; color: var(--muted); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .swatch div:first-child { height: 64px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 13px; }
+  .type-h1 { font-size: 32px; font-weight: 800; margin: 8px 0; }
+  .type-h2 { font-size: 24px; font-weight: 700; margin: 8px 0; }
+  .type-body { font-size: 16px; line-height: 1.6; color: #334155; }
+  .type-muted { color: var(--muted); font-size: 14px; }
+  .btn { display: inline-block; border: 0; border-radius: 10px; padding: 12px 20px; font-size: 15px; font-weight: 700; cursor: pointer; margin: 6px 8px 6px 0; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-dark); }
+  .btn-secondary { background: var(--secondary); color: #fff; }
+  .btn-accent { background: var(--accent); color: #1F2937; }
+  .btn-outline { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  label { display: block; font-weight: 600; margin: 14px 0 6px; }
+  input, select, textarea { width: 100%; max-width: 480px; padding: 12px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: inherit; background: #fff; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+  .sample-event { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: #EEF2FF; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Qubators App 2 — Design Preview</h1>
+  <p>Event Planning &amp; Management App • colors / typography / buttons / inputs</p>
+</header>
+<main>
+  <section class="card">
+    <h2>1. Colors</h2>
+    <p class="sub">Primary indigo for actions, teal secondary, amber accent for highlights.</p>
+    <div class="swatches">
+      <div class="swatch"><div style="background:#4F46E5"></div><span>Primary #4F46E5</span></div>
+      <div class="swatch"><div style="background:#3730A3"></div><span>Primary Dark #3730A3</span></div>
+      <div class="swatch"><div style="background:#0E7490"></div><span>Secondary #0E7490</span></div>
+      <div class="swatch"><div style="background:#F59E0B"></div><span>Accent #F59E0B</span></div>
+      <div class="swatch"><div style="background:#F8FAFC"></div><span>Background #F8FAFC</span></div>
+      <div class="swatch"><div style="background:#0F172A"></div><span>Text #0F172A</span></div>
+      <div class="swatch"><div style="background:#64748B"></div><span>Muted #64748B</span></div>
+      <div class="swatch"><div style="background:#16A34A"></div><span>Success #16A34A</span></div>
+      <div class="swatch"><div style="background:#DC2626"></div><span>Error #DC2626</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2. Typography</h2>
+    <p class="sub">System stack (Segoe UI) — no webfont needed locally.</p>
+    <div class="type-h1">Wedding for 250 guests — Heading 32px/800</div>
+    <div class="type-h2">Quotation ₦3,200,000 — Heading 24px/700</div>
+    <p class="type-body">Body 16px — Customers can explore ready-made event packages or submit customized event requests, set a budget, receive quotations, pay, and track preparation.</p>
+    <p class="type-muted">Muted 14px — Request Submitted • Payment Pending • Confirmed</p>
+  </section>
+
+  <section class="card">
+    <h2>3. Buttons</h2>
+    <p class="sub">Primary for main action, secondary/accent sparingly, outline for cancel.</p>
+    <button class="btn btn-primary">Accept Quotation</button>
+    <button class="btn btn-secondary">Request Changes</button>
+    <button class="btn btn-accent">Pay Deposit</button>
+    <button class="btn btn-outline">Decline</button>
+    <button class="btn btn-primary" disabled>Disabled</button>
+  </section>
+
+  <section class="card">
+    <h2>4. Sample Inputs</h2>
+    <p class="sub">Event request form style — labels, focus ring, full width.</p>
+    <div class="row">
+      <div>
+        <label for="event">Event type</label>
+        <select id="event">
+          <option>Wedding</option>
+          <option>Birthday</option>
+          <option>Conference</option>
+          <option>Owambe / Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="date">Event date</label>
+        <input id="date" type="date" value="2026-12-12" />
+      </div>
+    </div>
+    <label for="loc">Location</label>
+    <input id="loc" type="text" placeholder="e.g. Jos, Plateau State" value="Jos" />
+    <label for="budget">Budget (₦)</label>
+    <input id="budget" type="text" placeholder="e.g. 1,000,000 – 2,000,000" value="3,000,000" />
+    <label for="notes">Additional requirements</label>
+    <textarea id="notes" rows="3" placeholder="Catering for 250, outdoor venue, photography...">Catering for 250, decoration, photography, DJ</textarea>
+    <div style="margin-top:16px">
+      <button class="btn btn-primary">Submit Request</button>
+      <button class="btn btn-outline">Save Draft</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>5. Sample Combination</h2>
+    <p class="sub">How it looks together.</p>
+    <div class="sample-event">
+      <strong>Premium Wedding Package</strong>
+      <p class="type-muted">Venue • Catering • Decoration • Photography • DJ — Starting ₦2,650,000</p>
+      <button class="btn btn-primary">Customize Package</button>
+      <button class="btn btn-outline">View Details</button>
+    </div>
+  </section>
+</main>
+</body>
+</html>

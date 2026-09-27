@@ -1060,3 +1060,17 @@ The central product principle should remain:
 - Better Auth: email + password locally with no cloud auth service, roles (`customer | admin | vendor`) stored in DB, TypeScript-first with plugins for future needs. Keeps secrets out of the public repo and demo recordings.
 - Local disk `uploads/`: gitignored folder abstracted via `storage.ts` so we can swap to S3/Cloudinary later with no page churn and no bucket keys needed now.
 
+---
+
+# **44. Design Contrast Update Note (2026-09-27)**
+
+**Change (design.html, commit 0091ebc):** Increased contrast for accessibility (WCAG AA/AAA target).
+
+- Text #0F172A → #020617, body #334155 → #0F172A, muted #64748B → #334155
+- Primary #4F46E5 → #312E81, primary-dark #3730A3 → #1E1B4B, secondary #0E7490 → #0C4A6E
+- Success #16A34A → #15803D, Error #DC2626 → #B91C1C
+- Borders 1px #E2E8F0 → 2px #94A3B8, background #F8FAFC → #F1F5F9
+- Inputs: 2px #475569 borders with 3px focus ring; buttons bolder with visible borders; sample card now white with near-black border/text.
+
+**Reason:** Prior palette failed or was borderline for normal text and UI boundaries. New palette keeps brand hues while ensuring readable text, visible focus states, and clearer card/input separation in `design.html` preview.
+

@@ -1043,3 +1043,20 @@ The central product principle should remain:
 
 > **One place to plan, coordinate, pay for, and track an event from request to completion.**
 
+---
+
+# **43. Technical Decision Note (2026-09-27)**
+
+**Decision (by Gee01):**
+- Framework: Next.js + TypeScript
+- Database: Postgres (local install)
+- Authentication: Better Auth
+- File storage: Local disk `uploads/`
+- App & DB run locally for now. Repo is public: `https://github.com/Gee01/Qubators-App-2`
+
+**Reason:**
+- Next.js + TS: full-stack in one app (web + `app/api/`), runs locally on Node v24, easiest local dev.
+- Postgres local: prod-like relational DB, works with Prisma ORM for type-safe migrations and easy move to hosted Postgres later.
+- Better Auth: email + password locally with no cloud auth service, roles (`customer | admin | vendor`) stored in DB, TypeScript-first with plugins for future needs. Keeps secrets out of the public repo and demo recordings.
+- Local disk `uploads/`: gitignored folder abstracted via `storage.ts` so we can swap to S3/Cloudinary later with no page churn and no bucket keys needed now.
+

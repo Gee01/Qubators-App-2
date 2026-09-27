@@ -6,50 +6,51 @@
 <title>Qubators App 2 — Design Preview</title>
 <style>
   :root {
-    --primary: #4F46E5;
-    --primary-dark: #3730A3;
-    --secondary: #0E7490;
+    --primary: #312E81;
+    --primary-dark: #1E1B4B;
+    --secondary: #0C4A6E;
     --accent: #F59E0B;
-    --bg: #F8FAFC;
+    --bg: #F1F5F9;
     --surface: #FFFFFF;
-    --text: #0F172A;
-    --muted: #64748B;
-    --border: #E2E8F0;
-    --success: #16A34A;
-    --error: #DC2626;
+    --text: #020617;
+    --muted: #334155;
+    --border: #94A3B8;
+    --success: #15803D;
+    --error: #B91C1C;
     --radius: 12px;
     --font: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); }
-  header { background: var(--text); color: #fff; padding: 28px 32px; }
+  header { background: #020617; color: #fff; padding: 28px 32px; border-bottom: 4px solid var(--primary); }
   header h1 { margin: 0 0 6px; font-size: 28px; }
-  header p { margin: 0; color: #CBD5E1; }
+  header p { margin: 0; color: #F1F5F9; }
   main { max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; display: grid; gap: 24px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-  .card h2 { margin: 0 0 4px; font-size: 20px; }
-  .card > p.sub { margin: 0 0 16px; color: var(--muted); }
+  .card { background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .card h2 { margin: 0 0 4px; font-size: 20px; color: #020617; }
+  .card > p.sub { margin: 0 0 16px; color: #0F172A; font-weight: 600; }
   .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-  .swatch { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  .swatch div:first-child { height: 64px; }
-  .swatch span { display: block; padding: 8px 10px; font-size: 13px; }
-  .type-h1 { font-size: 32px; font-weight: 800; margin: 8px 0; }
-  .type-h2 { font-size: 24px; font-weight: 700; margin: 8px 0; }
-  .type-body { font-size: 16px; line-height: 1.6; color: #334155; }
-  .type-muted { color: var(--muted); font-size: 14px; }
-  .btn { display: inline-block; border: 0; border-radius: 10px; padding: 12px 20px; font-size: 15px; font-weight: 700; cursor: pointer; margin: 6px 8px 6px 0; }
-  .btn-primary { background: var(--primary); color: #fff; }
+  .swatch { border: 2px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .swatch div:first-child { height: 64px; border-bottom: 2px solid var(--border); }
+  .swatch span { display: block; padding: 8px 10px; font-size: 13px; color: #020617; font-weight: 600; background: #fff; }
+  .type-h1 { font-size: 32px; font-weight: 800; margin: 8px 0; color: #020617; }
+  .type-h2 { font-size: 24px; font-weight: 700; margin: 8px 0; color: #020617; }
+  .type-body { font-size: 16px; line-height: 1.6; color: #0F172A; }
+  .type-muted { color: #334155; font-size: 14px; font-weight: 600; }
+  .btn { display: inline-block; border: 2px solid transparent; border-radius: 10px; padding: 12px 20px; font-size: 15px; font-weight: 800; cursor: pointer; margin: 6px 8px 6px 0; }
+  .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
   .btn-primary:hover { background: var(--primary-dark); }
-  .btn-secondary { background: var(--secondary); color: #fff; }
-  .btn-accent { background: var(--accent); color: #1F2937; }
-  .btn-outline { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
-  .btn:disabled { opacity: .5; cursor: not-allowed; }
-  label { display: block; font-weight: 600; margin: 14px 0 6px; }
-  input, select, textarea { width: 100%; max-width: 480px; padding: 12px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: inherit; background: #fff; }
-  input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+  .btn-secondary { background: var(--secondary); color: #fff; border-color: #082F49; }
+  .btn-accent { background: var(--accent); color: #020617; border-color: #020617; }
+  .btn-outline { background: #fff; color: var(--primary-dark); border: 3px solid var(--primary-dark); }
+  .btn:disabled { opacity: .6; cursor: not-allowed; }
+  .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #020617; outline-offset: 2px; }
+  label { display: block; font-weight: 700; margin: 14px 0 6px; color: #020617; }
+  input, select, textarea { width: 100%; max-width: 480px; padding: 12px; border: 2px solid #475569; border-radius: 10px; font-size: 15px; font-family: inherit; background: #fff; color: #020617; }
+  input:focus, select:focus, textarea:focus { outline: 3px solid var(--primary); border-color: var(--primary-dark); }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
-  .sample-event { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: #EEF2FF; }
+  .sample-event { border: 2px solid #020617; border-radius: 10px; padding: 16px; background: #FFFFFF; color: #020617; }
 </style>
 </head>
 <body>
@@ -59,18 +60,18 @@
 </header>
 <main>
   <section class="card">
-    <h2>1. Colors</h2>
-    <p class="sub">Primary indigo for actions, teal secondary, amber accent for highlights.</p>
+    <h2>1. Colors — High Contrast</h2>
+    <p class="sub">Darkened for WCAG AA/AAA: near-black text, indigo-900 primary, slate borders.</p>
     <div class="swatches">
-      <div class="swatch"><div style="background:#4F46E5"></div><span>Primary #4F46E5</span></div>
-      <div class="swatch"><div style="background:#3730A3"></div><span>Primary Dark #3730A3</span></div>
-      <div class="swatch"><div style="background:#0E7490"></div><span>Secondary #0E7490</span></div>
+      <div class="swatch"><div style="background:#312E81"></div><span>Primary #312E81</span></div>
+      <div class="swatch"><div style="background:#1E1B4B"></div><span>Primary Dark #1E1B4B</span></div>
+      <div class="swatch"><div style="background:#0C4A6E"></div><span>Secondary #0C4A6E</span></div>
       <div class="swatch"><div style="background:#F59E0B"></div><span>Accent #F59E0B</span></div>
-      <div class="swatch"><div style="background:#F8FAFC"></div><span>Background #F8FAFC</span></div>
-      <div class="swatch"><div style="background:#0F172A"></div><span>Text #0F172A</span></div>
-      <div class="swatch"><div style="background:#64748B"></div><span>Muted #64748B</span></div>
-      <div class="swatch"><div style="background:#16A34A"></div><span>Success #16A34A</span></div>
-      <div class="swatch"><div style="background:#DC2626"></div><span>Error #DC2626</span></div>
+      <div class="swatch"><div style="background:#F1F5F9"></div><span>Background #F1F5F9</span></div>
+      <div class="swatch"><div style="background:#020617"></div><span>Text #020617</span></div>
+      <div class="swatch"><div style="background:#334155"></div><span>Muted #334155</span></div>
+      <div class="swatch"><div style="background:#15803D"></div><span>Success #15803D</span></div>
+      <div class="swatch"><div style="background:#B91C1C"></div><span>Error #B91C1C</span></div>
     </div>
   </section>
 
